@@ -18,6 +18,9 @@ describe("Dappcord", function () {
      //Deploy Contract
      const Dappcord = await ethers.getContractFactory(NAME)
      dappcord = await Dappcord.deploy(NAME, SYMBOL)
+
+     //Create a channel
+     const transaction = await dappcord.connect(deployer).createChannel("general", tokens(1))
   })
 
   describe("Deployment", function() {
