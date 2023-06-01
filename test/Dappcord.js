@@ -51,7 +51,10 @@ describe("Dappcord", function () {
         expect(result).to.be.equal(1);
       })
       it('Returns channel attributes', asunc() => {
-        const channel = await dappcord.getChannel(1);
+        const channel = await dappcord.getChannel(1)
+        expect(channel.id).to.be.equal(1)
+        expect(channel.name).to.be.equal("general")
+        expect(channel.cost).to.be.equal(tokens(1));
       })
     })
 })
